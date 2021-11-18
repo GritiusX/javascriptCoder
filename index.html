@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My custom Bulma website</title>
+    <title>CoderHouse Calendar - Javascript</title>
     <link rel="stylesheet" href="./node_modules/bulma/css/bulma.min.css">
     <link rel="stylesheet" href="css/mystyles.css">
 </head>
@@ -21,6 +21,7 @@
             </p>
         </div>
     </section>
+    <!-- ------------- Section Inputs de Tarea + Horario --------------- -->
     <section class="section">
         <div class="container">
             <div class="field is-grouped is-grouped-multiline">
@@ -28,18 +29,21 @@
                     <label class="label is-medium ml-2">Ingresar Tarea</label>
                     <div class="field">
                         <div class="control has-icons-left">
+                            <!-- ------------- Input de Tarea --------------- -->
                             <input id="tareaInput" class="input is-medium is-info" type="text"
                                 placeholder="Ingresar Tarea">
                             <span class="icon is-small is-left">
                                 <i class="fas fa-pen fa-xs"></i>
                             </span>
+
                         </div>
                     </div>
                 </div>
                 <div class="control">
                     <label class="label is-medium ml-2">Ingresar Horario</label>
                     <div class="control has-icons-left">
-                        <input id="horarioInput" class="input is-medium is-danger" type="text"
+                        <!-- ------------- Input de Horario --------------- -->
+                        <input id="horarioInput" class="input is-medium is-danger" type="number" min="0" max="23"
                             placeholder="Ingresar Horario">
                         <span class="icon is-small is-left">
                             <i class="fas fa-clock fa-xs"></i>
@@ -47,11 +51,13 @@
                     </div>
                 </div>
                 <div class="control mt-5">
+                    <!-- ------------- Button Agregar --------------- -->
                     <button id="agregarBtn" class="button is-primary is-medium moveButton">Agregar</button>
                 </div>
             </div>
         </div>
     </section>
+    <!-- ------------- Section Calendario --------------- -->
     <section class="section">
         <div class="container">
             <h3 id="mesCambia" class="title is-size-3">Noviembre 2021</h3>
@@ -114,27 +120,21 @@
             </div>
         </div>
     </section>
+
+    <!-- ------------- Section Tareas ya enviadas --------------- -->
     <section class="section">
         <div id="tareasSolicitadasContainer" class="container tareasBackground">
             <div class="textContainer">
                 <h2 class="label is-size-4 is-medium ml-2">Tareas Ingresadas:</h2>
             </div>
-            <div class="tareasContainer">
-                <div class="columns pt-4">
-                    <div class="column is-four-fifths is-centered divTareas">
-                        <h3 id="tareaLink" class="is-size-4 ml-6 tareaLink">Tarea 1</h3>
-                    </div>
-                    <div class="column is-one-fifths has-text-centered divBtns">
-                        <button id="editarBtn" class="button is-warning">Editar</button>
-                        <button id="borrarBtn" class="button is-danger">Borrar</button>
+            <div id="tareasContainer" class="tareasContainer">
 
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <!-- ------------- Section Paginacion --------------- -->
+    <!--     <section class="section">
         <div class="container">
             <nav class="pagination is-centered" role="navigation" aria-label="pagination">
                 <a class="pagination-previous">Previous Month</a>
@@ -148,7 +148,8 @@
                 </ul>
             </nav>
         </div>
-    </section>
+    </section> -->
+
     <script src="https://kit.fontawesome.com/97dc13afc2.js"></script>
     <script src="./js/dom.js"></script>
 </body>

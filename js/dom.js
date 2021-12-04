@@ -72,9 +72,6 @@ function mostrarTarea() {
         button.addEventListener('click', deleteRow);
     });
 
-    function deleteRow(e) {
-        e.target.parentElement.parentElement.remove();
-    }
 }
 
 
@@ -88,63 +85,10 @@ agregarBtn.addEventListener('click', () => {
     // localStorage.clear();
 })
 
-
-
-/* 
-function mostrarTareas() {
-    let tareasContainer = document.getElementById('tareasContainer');
-    if (!localStorage.getItem('Tareas Asignadas')) {
-        tareasContainer.innerHTML = `
-         <p class="label is-size-5 is-medium ml-2">No hay tareas pendientes</p>
-        `;
-    } else {
-        tareasContainer.innerHTML = "";
-        for (const tareas of tareasAgregadas) {
-            tareasContainer.innerHTML += `
-        <div class="columns pt-4">
-                    <div class="column is-four-fifths is-centered divTareas">
-                        <h3 id="tareaLink" class="is-size-4 ml-6 tareaLink"> ${tareas.tarea} </h3>
-                        <h3 id="tareaLink" class="is-size-4 ml-6 tareaLink"> ${tareas.horario} </h3>
-                    </div>
-                    <div class="column is-one-fifths has-text-centered divBtns">
-
-                        <button id="editarBtn" class="button is-warning edit">Editar</button>
-                        <button id="borrarBtn" class="button is-danger">Borrar</button>
-
-                    </div>
-                </div>
-        `;
-        }
-    }
-
+function deleteRow(e) {
+    tareasAgregadas.forEach(tareas => {
+        console.log('tareas:', tareas);
+        console.log('id tareas:', tareas.id);
+    });
+    e.target.parentElement.parentElement.remove();
 }
-
-
-
-document.addEventListener("DOMContentLoaded", localStorage.getItem('Tareas Asignadas'));
-
-agregarBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    setTarea();
-    mostrarTareas();
-});
-
-borrarBtn.addEventListener('click', () => {
-    console.log('hola');
-});
- */
-
-/* 
-agregarBtn.addEventListener('keyup', function (e) {
-    if (e === 13) {
-        if (tareaInput.value == '' || horarioInput.value == '') {
-            alert('Agregue Horario o tarea')
-        } else {
-
-            console.log(tareaInput.value);
-            console.log(horarioInput.value);
-
-        }
-    }
-}) 
-*/

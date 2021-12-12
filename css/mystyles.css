@@ -3,12 +3,15 @@
   margin-top: 16px; }
 
 .tareasBackground {
-  background-color: #D0D1CD;
+  background-color: #d0d1cd;
   border-radius: 10px;
   padding: 10px; }
 
 .tareaLink {
-  color: #8A4D76; }
+  color: #8a4d76; }
+
+.text-red {
+  color: crimson; }
 
 /* Bulma Utilities */
 .button, .input, .textarea, .select select, .file-cta,
@@ -177,7 +180,7 @@ th {
     text-align: inherit; }
 
 html {
-  background-color: #EFF0EB;
+  background-color: #eff0eb;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -320,7 +323,7 @@ table th {
     margin-left: calc(-0.5em - 2px);
     margin-right: calc(-0.5em - 2px); }
   .button:hover, .button.is-hovered {
-    border-color: #D0D1CD;
+    border-color: #d0d1cd;
     color: #363636; }
   .button:focus, .button.is-focused {
     border-color: #485fc7;
@@ -1285,7 +1288,7 @@ table th {
   .input:-ms-input-placeholder, .textarea:-ms-input-placeholder, .select select:-ms-input-placeholder {
     color: rgba(54, 54, 54, 0.3); }
   .input:hover, .textarea:hover, .select select:hover, .is-hovered.input, .is-hovered.textarea, .select select.is-hovered {
-    border-color: #D0D1CD; }
+    border-color: #d0d1cd; }
   .input:focus, .textarea:focus, .select select:focus, .is-focused.input, .is-focused.textarea, .select select.is-focused, .input:active, .textarea:active, .select select:active, .is-active.input, .is-active.textarea, .select select.is-active {
     border-color: #485fc7;
     box-shadow: 0 0 0 0.125em rgba(72, 95, 199, 0.25); }

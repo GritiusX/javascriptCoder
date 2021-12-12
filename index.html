@@ -1,101 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>CoderHouse ToDoList - Javascript</title>
+		<link rel="stylesheet" href="css/mystyles.css" />
+		<link rel="stylesheet" href="./node_modules/bulma/css/bulma.min.css" />
+	</head>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CoderHouse ToDoList - Javascript</title>
-    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.min.css">
-    <link rel="stylesheet" href="css/mystyles.css">
-</head>
+	<body>
+		<section class="hero is-link">
+			<div class="hero-body">
+				<h1 class="title is-size-1 has-text-centered">
+					CoderHouse ToDoList - Javascript
+				</h1>
+				<p class="subtitle has-text-centered">
+					Con Bulma CSS - un framework diferente a Bootstrap!
+				</p>
+			</div>
+		</section>
+		<!-- ------------- Section Inputs de Tarea + Horario --------------- -->
+		<section class="section">
+			<div class="container">
+				<div class="field is-grouped is-grouped-multiline">
+					<div class="control is-expanded">
+						<label class="label is-medium ml-2">Ingresar Tarea</label>
+						<div class="field">
+							<div class="control has-icons-left">
+								<!-- ------------- Input de Tarea --------------- -->
+								<input
+									id="tareaInput"
+									class="input is-medium is-info"
+									type="text"
+									placeholder="Ingresar Tarea"
+								/>
+								<span class="icon is-small is-left">
+									<i class="fas fa-pen fa-xs"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="control">
+						<label class="label is-medium ml-2">Ingresar Horario</label>
+						<div class="control has-icons-left">
+							<!-- ------------- Input de Horario --------------- -->
+							<input
+								id="horarioInput"
+								class="input is-medium is-danger"
+								type="time"
+								min="0"
+								max="23"
+								placeholder="Ingresar Horario"
+							/>
+							<span class="icon is-small is-left">
+								<i class="fas fa-clock fa-xs"></i>
+							</span>
+						</div>
+					</div>
+					<div class="control mt-5">
+						<!-- ------------- Button Agregar --------------- -->
+						<button
+							id="agregarBtn"
+							class="button is-primary is-medium moveButton"
+						>
+							Agregar
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="jokes">
+			<h2 class="is-size-3 has-text-centered">Chistes Random con Ajax</h2>
+			<h4 id="chuckNorris" class="is-size-5 has-text-centered"></h4>
+		</section>
+		<!-- ------------- Section Tareas ya enviadas --------------- -->
+		<section class="section">
+			<div id="tareasSolicitadasContainer" class="container tareasBackground">
+				<div class="textContainer">
+					<h2 class="label is-size-4 is-medium ml-2">Tareas Ingresadas:</h2>
+				</div>
+				<div class="tareasContainer2"></div>
+				<div id="tareasContainer" class="tareasContainer"></div>
+			</div>
+		</section>
 
-<body>
-    <section class="hero is-link">
-        <div class="hero-body">
-            <h1 class="title is-size-1 has-text-centered">
-                CoderHouse ToDoList - Javascript
-            </h1>
-            <p class="subtitle has-text-centered">
-                Con Bulma CSS - un framework diferente a Bootstrap!
-            </p>
-        </div>
-    </section>
-    <!-- ------------- Section Inputs de Tarea + Horario --------------- -->
-    <section class="section">
-        <div class="container">
-            <div class="field is-grouped is-grouped-multiline">
-                <div class="control is-expanded">
-                    <label class="label is-medium ml-2">Ingresar Tarea</label>
-                    <div class="field">
-                        <div class="control has-icons-left">
-                            <!-- ------------- Input de Tarea --------------- -->
-                            <input id="tareaInput" class="input is-medium is-info" type="text"
-                                placeholder="Ingresar Tarea">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-pen fa-xs"></i>
-                            </span>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="control">
-                    <label class="label is-medium ml-2">Ingresar Horario</label>
-                    <div class="control has-icons-left">
-                        <!-- ------------- Input de Horario --------------- -->
-                        <input id="horarioInput" class="input is-medium is-danger" type="time" min="0" max="23"
-                            placeholder="Ingresar Horario">
-                        <span class="icon is-small is-left">
-                            <i class="fas fa-clock fa-xs"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="control mt-5">
-                    <!-- ------------- Button Agregar --------------- -->
-                    <button id="agregarBtn" class="button is-primary is-medium moveButton">Agregar</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ------------- Section Tareas ya enviadas --------------- -->
-    <section class="section">
-        <div id="tareasSolicitadasContainer" class="container tareasBackground">
-            <div class="textContainer">
-                <h2 class="label is-size-4 is-medium ml-2">Tareas Ingresadas:</h2>
-            </div>
-            <div id="tareasContainer" class="tareasContainer">
-                <!--  <p class="label is-size-5 is-medium ml-2">No hay tareas pendientes</p> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ------------- Section Paginacion --------------- -->
-    <!--     <section class="section">
-        <div class="container">
-            <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-                <a class="pagination-previous">Previous Month</a>
-                <a class="pagination-next">Next Month</a>
-                <ul class="pagination-list">
-                    <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
-                    <li><span class="pagination-ellipsis">&hellip;</span></li>
-                    <li><a class="pagination-link" aria-label="Goto page 10">10</a></li>
-                    <li><a class="pagination-link is-current" aria-label="Page 11" aria-current="page">11</a></li>
-                    <li><a class="pagination-link" aria-label="Goto page 12">12</a></li>
-                </ul>
-            </nav>
-        </div>
-    </section> -->
-
-    <script src="https://kit.fontawesome.com/97dc13afc2.js"></script>
-    <script src="./js/dom.js"></script>
-</body>
-
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://kit.fontawesome.com/97dc13afc2.js"></script>
+		<script src="./js/dom.js"></script>
+	</body>
 </html>
-<!--     <script src="./js/arrays.js"></script>
-    
--->
-<!--     
-    <script src="./js/localStorageYjson.js"></script>
-    <script src="./js/app.js"></script>
